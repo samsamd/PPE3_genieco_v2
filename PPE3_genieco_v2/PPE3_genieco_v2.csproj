@@ -75,6 +75,12 @@
     <Compile Include="FAMILLE.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
+    <Compile Include="FConnex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FConnex.Designer.cs">
+      <DependentUpon>FConnex.cs</DependentUpon>
+    </Compile>
     <Compile Include="fichefrais.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
@@ -102,6 +108,7 @@
     <Compile Include="MEDICAMENT.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modele.cs" />
     <Compile Include="MOTIF.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
