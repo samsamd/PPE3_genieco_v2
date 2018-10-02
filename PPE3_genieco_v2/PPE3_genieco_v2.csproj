@@ -138,6 +138,9 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FConnex.resx">
+      <DependentUpon>FConnex.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
