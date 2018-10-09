@@ -16,5 +16,10 @@ namespace PPE3_genieco_v2
         {
             InitializeComponent();
         }
+
+        private void FConnex_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
