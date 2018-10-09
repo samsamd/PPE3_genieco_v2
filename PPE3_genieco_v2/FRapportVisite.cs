@@ -21,5 +21,24 @@ namespace PPE3_genieco_v2
         {
 
         }
+
+        private void FRapportVisite_Load(object sender, EventArgs e)
+        {
+            Modele.visiteurC();
+            lblutil.Text = Modele.VisiteurConnecte.nom.ToString() + " " + Modele.VisiteurConnecte.prenom.ToString();
+            cblisterapp.ValueMember = "idRapport";
+            cblisterapp.DisplayMember = "idRapport";
+            bsRapport.DataSource = Modele.rapportParVisiteur(Modele.VisiteurConnecte.idVisiteur.ToString());
+            cblisterapp.DataSource = bsRapport;
+        }
+
+        private void bsRapport_CurrentChanged(object sender, EventArgs e)
+        {
+            bsMedecin.DataSource = ((RAPPORT)bsRapport.Current).MEDECIN.idMedecin;
+            txtboxprac.Text = ((RAPPORT)bsRapport.Current).MEDECIN.nom.ToString();
+            txtdaterapp.Text = ((RAPPORT)bsRapport.Current).dateRapport.ToString();
+
+
+        }
     }
 }
