@@ -16,10 +16,5 @@ namespace PPE3_genieco_v2
         {
             InitializeComponent();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

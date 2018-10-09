@@ -93,6 +93,12 @@
     <Compile Include="FraisForfait.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
+    <Compile Include="FRapportVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRapportVisite.Designer.cs">
+      <DependentUpon>FRapportVisite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Laboratoire.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="FGestionFrais.resx">
       <DependentUpon>FGestionFrais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRapportVisite.resx">
+      <DependentUpon>FRapportVisite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
