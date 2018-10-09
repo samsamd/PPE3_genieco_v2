@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="genico_bdd_gsbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="genico_bdd_gsbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
@@ -67,6 +67,7 @@
           <Property Name="libelle" Type="varchar" MaxLength="100" />
           <Property Name="date" Type="date" />
           <Property Name="montant" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="valide" Type="varchar" MaxLength="3" />
         </EntityType>
         <EntityType Name="MEDECIN">
           <Key>
@@ -90,6 +91,15 @@
           <Property Name="composition" Type="varchar" MaxLength="256" Nullable="false" />
           <Property Name="effets" Type="varchar" MaxLength="256" Nullable="false" />
           <Property Name="contreIndications" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="montantRegion">
+          <Key>
+            <PropertyRef Name="idRegion" />
+            <PropertyRef Name="idFraisForfait" />
+          </Key>
+          <Property Name="idRegion" Type="int" Nullable="false" />
+          <Property Name="idFraisForfait" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="montant" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="MOTIF">
           <Key>
@@ -229,6 +239,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_fraisforfait">
+          <End Role="FraisForfait" Type="Self.FraisForfait" Multiplicity="1" />
+          <End Role="montantRegion" Type="Self.montantRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FraisForfait">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="montantRegion">
+              <PropertyRef Name="idFraisForfait" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Laboratoire">
           <End Role="Laboratoire" Type="Self.Laboratoire" Multiplicity="1" />
           <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="*" />
@@ -238,6 +260,18 @@
             </Principal>
             <Dependent Role="Visiteur">
               <PropertyRef Name="idLabo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_region">
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
+          <End Role="montantRegion" Type="Self.montantRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="idRegion" />
+            </Principal>
+            <Dependent Role="montantRegion">
+              <PropertyRef Name="idRegion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -395,6 +429,7 @@
           <EntitySet Name="LigneFraisHorsForfait" EntityType="Self.LigneFraisHorsForfait" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MEDECIN" EntityType="Self.MEDECIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MEDICAMENT" EntityType="Self.MEDICAMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="montantRegion" EntityType="Self.montantRegion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MOTIF" EntityType="Self.MOTIF" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OFFRIR" EntityType="Self.OFFRIR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RAPPORT" EntityType="Self.RAPPORT" Schema="dbo" store:Type="Tables" />
@@ -423,9 +458,17 @@
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisHorsForfait" EntitySet="LigneFraisHorsForfait" />
           </AssociationSet>
+          <AssociationSet Name="fk_fraisforfait" Association="Self.fk_fraisforfait">
+            <End Role="FraisForfait" EntitySet="FraisForfait" />
+            <End Role="montantRegion" EntitySet="montantRegion" />
+          </AssociationSet>
           <AssociationSet Name="FK_Laboratoire" Association="Self.FK_Laboratoire">
             <End Role="Laboratoire" EntitySet="Laboratoire" />
             <End Role="Visiteur" EntitySet="Visiteur" />
+          </AssociationSet>
+          <AssociationSet Name="fk_region" Association="Self.fk_region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="montantRegion" EntitySet="montantRegion" />
           </AssociationSet>
           <AssociationSet Name="FK_SECTEUR" Association="Self.FK_SECTEUR">
             <End Role="Secteur" EntitySet="Secteur" />
@@ -476,8 +519,7 @@
             <End Role="RAPPORT" EntitySet="RAPPORT" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="genico_bdd_gsbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -521,6 +563,7 @@
           <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
           <NavigationProperty Name="LigneFraisForfait" Relationship="Self.FK__LigneFrai__idFra__267ABA7A" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
+          <NavigationProperty Name="montantRegion" Relationship="genico_bdd_gsbModel.fk_fraisforfait" FromRole="FraisForfait" ToRole="montantRegion" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -554,6 +597,7 @@
           <Property Name="date" Type="DateTime" Precision="0" />
           <Property Name="montant" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="fichefrais" Relationship="Self.FK__LigneFraisHorsFo__2E1BDC42" FromRole="LigneFraisHorsForfait" ToRole="fichefrais" />
+          <Property Name="valide" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="MEDECIN">
           <Key>
@@ -627,6 +671,7 @@
           <NavigationProperty Name="Secteur" Relationship="Self.FK_SECTEUR" FromRole="Region" ToRole="Secteur" />
           <NavigationProperty Name="Visiteur" Relationship="Self.FK_VISITEUR" FromRole="Region" ToRole="Visiteur" />
           <NavigationProperty Name="Visiteur1" Relationship="Self.Travailler" FromRole="Region" ToRole="Visiteur" />
+          <NavigationProperty Name="montantRegion" Relationship="genico_bdd_gsbModel.fk_region" FromRole="Region" ToRole="montantRegion" />
         </EntityType>
         <EntityType Name="Secteur">
           <Key>
@@ -952,7 +997,51 @@
             <End Role="Region" EntitySet="Region" />
             <End Role="Visiteur" EntitySet="Visiteur" />
           </AssociationSet>
+          <EntitySet Name="montantRegion" EntityType="genico_bdd_gsbModel.montantRegion" />
+          <AssociationSet Name="fk_fraisforfait" Association="genico_bdd_gsbModel.fk_fraisforfait">
+            <End Role="FraisForfait" EntitySet="FraisForfait" />
+            <End Role="montantRegion" EntitySet="montantRegion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_region" Association="genico_bdd_gsbModel.fk_region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="montantRegion" EntitySet="montantRegion" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="montantRegion">
+          <Key>
+            <PropertyRef Name="idRegion" />
+            <PropertyRef Name="idFraisForfait" />
+          </Key>
+          <Property Name="idRegion" Type="Int32" Nullable="false" />
+          <Property Name="idFraisForfait" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="montant" Type="Double" Nullable="false" />
+          <NavigationProperty Name="FraisForfait" Relationship="genico_bdd_gsbModel.fk_fraisforfait" FromRole="montantRegion" ToRole="FraisForfait" />
+          <NavigationProperty Name="Region" Relationship="genico_bdd_gsbModel.fk_region" FromRole="montantRegion" ToRole="Region" />
+        </EntityType>
+        <Association Name="fk_fraisforfait">
+          <End Type="genico_bdd_gsbModel.FraisForfait" Role="FraisForfait" Multiplicity="1" />
+          <End Type="genico_bdd_gsbModel.montantRegion" Role="montantRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FraisForfait">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="montantRegion">
+              <PropertyRef Name="idFraisForfait" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_region">
+          <End Type="genico_bdd_gsbModel.Region" Role="Region" Multiplicity="1" />
+          <End Type="genico_bdd_gsbModel.montantRegion" Role="montantRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="idRegion" />
+            </Principal>
+            <Dependent Role="montantRegion">
+              <PropertyRef Name="idRegion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1017,6 +1106,7 @@
           <EntitySetMapping Name="LigneFraisHorsForfait">
             <EntityTypeMapping TypeName="genico_bdd_gsbModel.LigneFraisHorsForfait">
               <MappingFragment StoreEntitySet="LigneFraisHorsForfait">
+                <ScalarProperty Name="valide" ColumnName="valide" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
                 <ScalarProperty Name="mois" ColumnName="mois" />
@@ -1131,6 +1221,15 @@
               <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="montantRegion">
+            <EntityTypeMapping TypeName="genico_bdd_gsbModel.montantRegion">
+              <MappingFragment StoreEntitySet="montantRegion">
+                <ScalarProperty Name="montant" ColumnName="montant" />
+                <ScalarProperty Name="idFraisForfait" ColumnName="idFraisForfait" />
+                <ScalarProperty Name="idRegion" ColumnName="idRegion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

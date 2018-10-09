@@ -18,6 +18,7 @@ namespace PPE3_genieco_v2
         public FraisForfait()
         {
             this.LigneFraisForfait = new HashSet<LigneFraisForfait>();
+            this.montantRegion = new HashSet<montantRegion>();
         }
     
         public string id { get; set; }
@@ -26,5 +27,7 @@ namespace PPE3_genieco_v2
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LigneFraisForfait> LigneFraisForfait { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<montantRegion> montantRegion { get; set; }
     }
 }

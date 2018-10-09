@@ -109,6 +109,9 @@
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele.cs" />
+    <Compile Include="montantRegion.cs">
+      <DependentUpon>bdd_gsb.tt</DependentUpon>
+    </Compile>
     <Compile Include="MOTIF.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>

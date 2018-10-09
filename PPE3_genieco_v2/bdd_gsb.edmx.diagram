@@ -38,6 +38,9 @@
         <AssociationConnector Association="genico_bdd_gsbModel.FK_VISITEUR" ManuallyRouted="false" />
         <AssociationConnector Association="genico_bdd_gsbModel.FK_VISITEURSECTEUR" ManuallyRouted="false" />
         <AssociationConnector Association="genico_bdd_gsbModel.Travailler" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="genico_bdd_gsbModel.montantRegion" Width="1.5" PointX="10.5" PointY="11.5" />
+        <AssociationConnector Association="genico_bdd_gsbModel.fk_fraisforfait" />
+        <AssociationConnector Association="genico_bdd_gsbModel.fk_region" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

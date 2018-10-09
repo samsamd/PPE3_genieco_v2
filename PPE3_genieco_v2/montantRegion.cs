@@ -12,16 +12,13 @@ namespace PPE3_genieco_v2
     using System;
     using System.Collections.Generic;
     
-    public partial class LigneFraisHorsForfait
+    public partial class montantRegion
     {
-        public int id { get; set; }
-        public string idVisiteur { get; set; }
-        public string mois { get; set; }
-        public string libelle { get; set; }
-        public Nullable<System.DateTime> date { get; set; }
-        public Nullable<decimal> montant { get; set; }
-        public string valide { get; set; }
+        public int idRegion { get; set; }
+        public string idFraisForfait { get; set; }
+        public double montant { get; set; }
     
-        public virtual fichefrais fichefrais { get; set; }
+        public virtual FraisForfait FraisForfait { get; set; }
+        public virtual Region Region { get; set; }
     }
 }
