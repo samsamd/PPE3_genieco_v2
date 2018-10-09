@@ -84,11 +84,23 @@
     <Compile Include="fichefrais.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="MenuresponsableSecteur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="MenuresponsableSecteur.Designer.cs">
+      <DependentUpon>MenuresponsableSecteur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuresponsableLabo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuresponsableLabo.Designer.cs">
+      <DependentUpon>MenuresponsableLabo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuSalarie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuSalarie.Designer.cs">
+      <DependentUpon>MenuSalarie.cs</DependentUpon>
     </Compile>
     <Compile Include="FraisForfait.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
@@ -132,8 +144,14 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="MenuresponsableSecteur.resx">
+      <DependentUpon>MenuresponsableSecteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuresponsableLabo.resx">
+      <DependentUpon>MenuresponsableLabo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuSalarie.resx">
+      <DependentUpon>MenuSalarie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,6 +161,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="bdd_gsb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -176,6 +195,9 @@
       <DependentUpon>bdd_gsb.edmx</DependentUpon>
       <LastGenOutput>bdd_gsb.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\logo de bg.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\hospital.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
