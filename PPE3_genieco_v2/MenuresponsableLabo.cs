@@ -10,16 +10,14 @@ using System.Windows.Forms;
 
 namespace PPE3_genieco_v2
 {
-    public partial class FConnex : Form
+    public partial class MenuresponsabledeLabo : Form
     {
-        public FConnex()
+        public MenuresponsabledeLabo()
         {
             InitializeComponent();
         }
 
-        private void FConnex_Load(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }

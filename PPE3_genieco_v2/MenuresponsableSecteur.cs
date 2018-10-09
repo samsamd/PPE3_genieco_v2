@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace PPE3_genieco_v2
 {
-    public partial class FConnex : Form
+    public partial class MenuresponsableLabo : Form
     {
-        public FConnex()
+        public MenuresponsableLabo()
         {
             InitializeComponent();
         }
 
-        private void FConnex_Load(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void finDeContractToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

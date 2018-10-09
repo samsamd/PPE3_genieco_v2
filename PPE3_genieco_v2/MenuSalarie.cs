@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace PPE3_genieco_v2
 {
-    public partial class Form1 : Form
+    public partial class MenuSalarie : Form
     {
-        public Form1()
+        public MenuSalarie()
         {
             InitializeComponent();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
