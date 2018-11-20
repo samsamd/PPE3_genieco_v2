@@ -141,6 +141,9 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FConnex.resx">
+      <DependentUpon>FConnex.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FGestionFrais.resx">
       <DependentUpon>FGestionFrais.cs</DependentUpon>
     </EmbeddedResource>

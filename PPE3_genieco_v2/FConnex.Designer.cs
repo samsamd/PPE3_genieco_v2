@@ -91,7 +91,7 @@
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
             this.Name = "FConnex";
-            this.Text = "FConnex";
+            this.Text = "Connection";
             this.Load += new System.EventHandler(this.FConnex_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
