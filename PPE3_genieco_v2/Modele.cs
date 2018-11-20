@@ -24,10 +24,7 @@ namespace PPE3_genieco_v2
 
         }
 
-        public static void connexionTest()
-        {
-            visiteurConnecte = maConnexion.Visiteur.Where(x => x.idVisiteur == "a13").ToList()[0];
-        }
+
 
         public static List<RAPPORT> rapportParVisiteur(string idVisiteur)
         {
