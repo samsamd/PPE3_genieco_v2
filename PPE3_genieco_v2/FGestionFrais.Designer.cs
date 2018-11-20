@@ -110,7 +110,7 @@
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblFraisForfaitaire);
             this.Name = "FGestionFrais";
-            this.Text = "Gestion des frais";
+            this.Text = "Gestion des fraisss";
             this.ResumeLayout(false);
             this.PerformLayout();
 
