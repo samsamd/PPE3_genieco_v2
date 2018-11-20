@@ -28,7 +28,7 @@ namespace PPE3_genieco_v2
             string mdp = textBox2.Text;
             if (Modele.comparerMDP(id, mdp) == true)
             {
-                Form FMenuVisiteur = new Form();
+                FMenuVisiteur FMenuVisiteur = new FMenuVisiteur();
                 FMenuVisiteur.Show();
                 this.Hide();
             }
