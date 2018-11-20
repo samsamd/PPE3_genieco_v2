@@ -16,7 +16,7 @@ namespace PPE3_genieco_v2
         public FRapportVisite()
         {
             InitializeComponent();
-            Modele.connexionTest();
+           
             bsRapport.DataSource = Modele.rapportParVisiteur(Modele.VisiteurConnecte.idVisiteur);
             lblUser.Text = Modele.VisiteurConnecte.nom + " " + Modele.VisiteurConnecte.prenom;
             cboNumRapp.DataSource = bsRapport.DataSource;
