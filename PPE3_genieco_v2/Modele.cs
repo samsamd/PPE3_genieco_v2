@@ -47,5 +47,13 @@ namespace PPE3_genieco_v2
             return LQuery.ToList();
 
         }
+
+        public static List<OFFRIR> medicamentParRapport(int unIdRapport)
+        {
+            var LQuery = maConnexion.OFFRIR.ToList().Where(x => x.idRapport == unIdRapport);
+            return LQuery.ToList();
+
+        }
+
     }
 }

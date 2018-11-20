@@ -41,7 +41,16 @@ namespace PPE3_genieco_v2
 
         }
 
-       
+       private void bsRapport2_CurrentChanged(object sender, EventArgs e)
+        {
+            bsMedicament.DataSource = Modele.medicamentParRapport(int.Parse(cboNumRapp.SelectedValue.ToString()));
+            dgvMedicament.DataSource = bsMedicament;
+            dgvMedicament.Columns[0].Visible= false;
+            dgvMedicament.Columns[1].HeaderText = "Médicament";
+            dgvMedicament.Columns[2].HeaderText = "Quantité";
+            dgvMedicament.Columns[3].Visible = false;
+            dgvMedicament.Columns[4].Visible = false;
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

@@ -42,8 +42,13 @@
             this.bsRapport = new System.Windows.Forms.BindingSource(this.components);
             this.bsRapport2 = new System.Windows.Forms.BindingSource(this.components);
             this.cboNumRapp = new System.Windows.Forms.ComboBox();
+            this.dgvMedicament = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.bsMedicament = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicament)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedicament)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUser
@@ -60,9 +65,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Practicien";
+            this.label1.Text = "Médecin";
             // 
             // txtPracticien
             // 
@@ -130,6 +135,10 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Numero Rapport";
             // 
+            // bsRapport2
+            // 
+            this.bsRapport2.CurrentChanged += new System.EventHandler(this.bsRapport2_CurrentChanged);
+            // 
             // cboNumRapp
             // 
             this.cboNumRapp.FormattingEnabled = true;
@@ -139,11 +148,30 @@
             this.cboNumRapp.TabIndex = 10;
             this.cboNumRapp.SelectedIndexChanged += new System.EventHandler(this.cboNumRapp_SelectedIndexChanged);
             // 
+            // dgvMedicament
+            // 
+            this.dgvMedicament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicament.Location = new System.Drawing.Point(466, 217);
+            this.dgvMedicament.Name = "dgvMedicament";
+            this.dgvMedicament.Size = new System.Drawing.Size(244, 118);
+            this.dgvMedicament.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(539, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Médicaments offerts";
+            // 
             // FRapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dgvMedicament);
             this.Controls.Add(this.cboNumRapp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtBoxBilan);
@@ -159,6 +187,8 @@
             this.Text = "FRapportVisite";
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicament)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedicament)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +209,8 @@
         private System.Windows.Forms.BindingSource bsRapport;
         private System.Windows.Forms.BindingSource bsRapport2;
         private System.Windows.Forms.ComboBox cboNumRapp;
+        private System.Windows.Forms.DataGridView dgvMedicament;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.BindingSource bsMedicament;
     }
 }
