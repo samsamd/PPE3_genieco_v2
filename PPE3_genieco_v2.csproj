@@ -72,12 +72,6 @@
     <Compile Include="Etat.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
-    <Compile Include="FActionGestionFrais.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FActionGestionFrais.Designer.cs">
-      <DependentUpon>FActionGestionFrais.cs</DependentUpon>
-    </Compile>
     <Compile Include="FAMILLE.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
@@ -127,6 +121,9 @@
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele.cs" />
+    <Compile Include="montantRegion.cs">
+      <DependentUpon>bdd_gsb.tt</DependentUpon>
+    </Compile>
     <Compile Include="MOTIF.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
@@ -155,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FGestionFrais.resx">
       <DependentUpon>FGestionFrais.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMenuVisiteur.resx">
-      <DependentUpon>FMenuVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRapportVisite.resx">
       <DependentUpon>FRapportVisite.cs</DependentUpon>
@@ -190,9 +184,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bdd_gsb.Context.tt">

@@ -19,7 +19,7 @@ namespace PPE3_genieco_v2
 
         private void FConnex_Load(object sender, EventArgs e)
         {
-
+ 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace PPE3_genieco_v2
             string mdp = textBox2.Text;
             if (Modele.comparerMDP(id, mdp) == true)
             {
-                FMenuVisiteur FMenuVisiteur = new FMenuVisiteur();
+                Form FMenuVisiteur = new Form();
                 FMenuVisiteur.Show();
                 this.Hide();
             }
@@ -39,4 +39,3 @@ namespace PPE3_genieco_v2
         }
     }
 }
-
