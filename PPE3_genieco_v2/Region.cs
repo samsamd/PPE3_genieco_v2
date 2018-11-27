@@ -18,19 +18,17 @@ namespace PPE3_genieco_v2
         public Region()
         {
             this.Visiteur1 = new HashSet<Visiteur>();
-            this.montantRegion = new HashSet<montantRegion>();
         }
     
         public int idRegion { get; set; }
         public string libRegion { get; set; }
         public string idVisiteur { get; set; }
         public int idSecteur { get; set; }
+        public Nullable<double> coefficient { get; set; }
     
         public virtual Secteur Secteur { get; set; }
         public virtual Visiteur Visiteur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Visiteur> Visiteur1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<montantRegion> montantRegion { get; set; }
     }
 }
