@@ -23,6 +23,7 @@ namespace PPE3_genieco_v2
     
         public string idVisiteur { get; set; }
         public string mois { get; set; }
+        public int annee { get; set; }
         public Nullable<int> nbJustificatifs { get; set; }
         public Nullable<decimal> montantValide { get; set; }
         public Nullable<System.DateTime> dateModif { get; set; }

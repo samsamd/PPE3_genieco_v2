@@ -41,6 +41,5 @@ namespace PPE3_genieco_v2
         public virtual DbSet<Secteur> Secteur { get; set; }
         public virtual DbSet<SPECIALITE> SPECIALITE { get; set; }
         public virtual DbSet<Visiteur> Visiteur { get; set; }
-        public virtual DbSet<montantRegion> montantRegion { get; set; }
     }
 }

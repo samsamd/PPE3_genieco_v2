@@ -17,6 +17,7 @@ namespace PPE3_genieco_v2
         public int id { get; set; }
         public string idVisiteur { get; set; }
         public string mois { get; set; }
+        public Nullable<int> annee { get; set; }
         public string libelle { get; set; }
         public Nullable<System.DateTime> date { get; set; }
         public Nullable<decimal> montant { get; set; }
