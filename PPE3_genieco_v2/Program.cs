@@ -19,7 +19,7 @@ namespace PPE3_genieco_v2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Modele.init();
-            Application.Run(new FGestionFrais());
+            Application.Run(new FConnex());
         }
     }
 }
