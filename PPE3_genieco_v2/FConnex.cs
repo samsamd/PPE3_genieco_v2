@@ -17,6 +17,19 @@ namespace PPE3_genieco_v2
             InitializeComponent();
         }
 
+        public static void threadProcMR()
+        {
+            Application.Run(new FMenuResponsableLabo1());
+        }
+        public static void threadProcMS()
+        {
+            Application.Run(new FResponsableSecteur());
+        }
+        public static void threadProcM()
+        {
+            Application.Run(new FMenuVisiteur());
+        }
+
         private void FConnex_Load(object sender, EventArgs e)
         {
 
@@ -26,11 +39,42 @@ namespace PPE3_genieco_v2
         {
             string id = textBox1.Text;
             string mdp = textBox2.Text;
+            int i = 0;
+            bool ouvert = false;
             if (Modele.comparerMDP(id, mdp) == true)
             {
-                FMenuVisiteur FMenuVisiteur = new FMenuVisiteur();
-                FMenuVisiteur.Show();
-                this.Hide();
+                List<Region> malr = Modele.listResponsableRegion();
+                while ( i  < Modele.listResponsableRegion().Count)
+                    {
+                    if (Modele.listResponsableRegion()[i].idVisiteur == Modele.VisiteurConnecte.idVisiteur)
+                    {
+                        System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(threadProcMR));
+                        t.Start();
+                        this.Close();
+                        ouvert = true;
+                        break;
+                    }
+                    i = i + 1;
+                }
+                i = 0;
+                while (i < Modele.listResponsableSecteur().Count)
+                {
+                    if (Modele.listResponsableSecteur()[i].idVisiteur == Modele.VisiteurConnecte.idVisiteur)
+                    {
+                        System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(threadProcMS));
+                        t.Start();
+                        this.Close();
+                        ouvert = true;
+                        break;
+                    }
+                    i = i + 1;
+                }
+                if(ouvert == false)
+                {
+                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(threadProcM));
+                    t.Start();
+                    this.Close();
+                }
             }
             else
             {

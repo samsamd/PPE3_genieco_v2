@@ -48,9 +48,13 @@ namespace PPE3_genieco_v2
 
         }
 
-        public static List<Visiteur> listeLesVisiteurs()
+        public static List<Region> listResponsableRegion()
         {
-            return maConnexion.Visiteur.ToList();
+            return maConnexion.Region.ToList();
+        }
+        public static List<Secteur> listResponsableSecteur()
+        {
+            return maConnexion.Secteur.ToList();
         }
 
         public static List<OFFRIR> medicamentParRapport(int unIdRapport)
@@ -82,7 +86,7 @@ namespace PPE3_genieco_v2
         public static bool comparerMDP(string id, string mdp)
         {
             bool retour = false;
-            List<Visiteur> LesVisiteurs = Modele.listeLesVisiteurs();
+            List<Visiteur> LesVisiteurs = Modele.ListVisiteur();
             string mdpmd5 = GetMd5Hash(mdp);
             var LQuery = maConnexion.Visiteur.Where(x => x.identifiant == id);
             foreach (Visiteur visiteurconnecte in LesVisiteurs)

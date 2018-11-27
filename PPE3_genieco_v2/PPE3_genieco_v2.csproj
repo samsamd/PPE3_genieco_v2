@@ -90,6 +90,12 @@
     <Compile Include="fichefrais.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
+    <Compile Include="FMenuResponsableLabo1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMenuResponsableLabo1.Designer.cs">
+      <DependentUpon>FMenuResponsableLabo1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMenuVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="FRapportVisite.Designer.cs">
       <DependentUpon>FRapportVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FResponsableSecteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FResponsableSecteur.Designer.cs">
+      <DependentUpon>FResponsableSecteur.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratoire.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
@@ -153,11 +165,17 @@
     <EmbeddedResource Include="FGestionFrais.resx">
       <DependentUpon>FGestionFrais.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMenuResponsableLabo1.resx">
+      <DependentUpon>FMenuResponsableLabo1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMenuVisiteur.resx">
       <DependentUpon>FMenuVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRapportVisite.resx">
       <DependentUpon>FRapportVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FResponsableSecteur.resx">
+      <DependentUpon>FResponsableSecteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
