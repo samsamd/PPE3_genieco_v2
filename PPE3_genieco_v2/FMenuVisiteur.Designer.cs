@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoPersoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.responsabilitéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +39,12 @@
             this.parSecteurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parRegionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.globalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -55,6 +57,69 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // informationToolStripMenuItem
+            // 
+            this.informationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.infoPersoToolStripMenuItem,
+            this.responsabilitéToolStripMenuItem,
+            this.modifierLeMdpToolStripMenuItem,
+            this.budgetToolStripMenuItem});
+            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.informationToolStripMenuItem.Text = "information";
+            // 
+            // infoPersoToolStripMenuItem
+            // 
+            this.infoPersoToolStripMenuItem.Name = "infoPersoToolStripMenuItem";
+            this.infoPersoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.infoPersoToolStripMenuItem.Text = "info perso";
+            // 
+            // responsabilitéToolStripMenuItem
+            // 
+            this.responsabilitéToolStripMenuItem.Name = "responsabilitéToolStripMenuItem";
+            this.responsabilitéToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.responsabilitéToolStripMenuItem.Text = "responsabilité";
+            // 
+            // modifierLeMdpToolStripMenuItem
+            // 
+            this.modifierLeMdpToolStripMenuItem.Name = "modifierLeMdpToolStripMenuItem";
+            this.modifierLeMdpToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.modifierLeMdpToolStripMenuItem.Text = "modifier le mdp";
+            // 
+            // budgetToolStripMenuItem
+            // 
+            this.budgetToolStripMenuItem.Name = "budgetToolStripMenuItem";
+            this.budgetToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.budgetToolStripMenuItem.Text = "budget";
+            // 
+            // visiteurToolStripMenuItem
+            // 
+            this.visiteurToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parSecteurToolStripMenuItem,
+            this.parRegionToolStripMenuItem,
+            this.globalToolStripMenuItem});
+            this.visiteurToolStripMenuItem.Name = "visiteurToolStripMenuItem";
+            this.visiteurToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.visiteurToolStripMenuItem.Text = "visiteur";
+            // 
+            // parSecteurToolStripMenuItem
+            // 
+            this.parSecteurToolStripMenuItem.Name = "parSecteurToolStripMenuItem";
+            this.parSecteurToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.parSecteurToolStripMenuItem.Text = "par secteur";
+            // 
+            // parRegionToolStripMenuItem
+            // 
+            this.parRegionToolStripMenuItem.Name = "parRegionToolStripMenuItem";
+            this.parRegionToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.parRegionToolStripMenuItem.Text = "par region";
+            // 
+            // globalToolStripMenuItem
+            // 
+            this.globalToolStripMenuItem.Name = "globalToolStripMenuItem";
+            this.globalToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.globalToolStripMenuItem.Text = "global";
             // 
             // button1
             // 
@@ -81,74 +146,21 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // informationToolStripMenuItem
+            // pictureBox1
             // 
-            this.informationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.infoPersoToolStripMenuItem,
-            this.responsabilitéToolStripMenuItem,
-            this.modifierLeMdpToolStripMenuItem,
-            this.budgetToolStripMenuItem});
-            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
-            this.informationToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.informationToolStripMenuItem.Text = "information";
-            // 
-            // infoPersoToolStripMenuItem
-            // 
-            this.infoPersoToolStripMenuItem.Name = "infoPersoToolStripMenuItem";
-            this.infoPersoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.infoPersoToolStripMenuItem.Text = "info perso";
-            // 
-            // responsabilitéToolStripMenuItem
-            // 
-            this.responsabilitéToolStripMenuItem.Name = "responsabilitéToolStripMenuItem";
-            this.responsabilitéToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.responsabilitéToolStripMenuItem.Text = "responsabilité";
-            // 
-            // modifierLeMdpToolStripMenuItem
-            // 
-            this.modifierLeMdpToolStripMenuItem.Name = "modifierLeMdpToolStripMenuItem";
-            this.modifierLeMdpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modifierLeMdpToolStripMenuItem.Text = "modifier le mdp";
-            // 
-            // budgetToolStripMenuItem
-            // 
-            this.budgetToolStripMenuItem.Name = "budgetToolStripMenuItem";
-            this.budgetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.budgetToolStripMenuItem.Text = "budget";
-            // 
-            // visiteurToolStripMenuItem
-            // 
-            this.visiteurToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.parSecteurToolStripMenuItem,
-            this.parRegionToolStripMenuItem,
-            this.globalToolStripMenuItem});
-            this.visiteurToolStripMenuItem.Name = "visiteurToolStripMenuItem";
-            this.visiteurToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.visiteurToolStripMenuItem.Text = "visiteur";
-            // 
-            // parSecteurToolStripMenuItem
-            // 
-            this.parSecteurToolStripMenuItem.Name = "parSecteurToolStripMenuItem";
-            this.parSecteurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.parSecteurToolStripMenuItem.Text = "par secteur";
-            // 
-            // parRegionToolStripMenuItem
-            // 
-            this.parRegionToolStripMenuItem.Name = "parRegionToolStripMenuItem";
-            this.parRegionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.parRegionToolStripMenuItem.Text = "par region";
-            // 
-            // globalToolStripMenuItem
-            // 
-            this.globalToolStripMenuItem.Name = "globalToolStripMenuItem";
-            this.globalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.globalToolStripMenuItem.Text = "global";
+            this.pictureBox1.BackgroundImage = global::PPE3_genieco_v2.Properties.Resources.logo_de_bg;
+            this.pictureBox1.Location = new System.Drawing.Point(466, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 280);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // FMenuVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -157,6 +169,7 @@
             this.Text = "FMenuVisiteur";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +190,6 @@
         private System.Windows.Forms.ToolStripMenuItem parRegionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem globalToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -33,7 +33,7 @@
             // 
             // btest
             // 
-            this.btest.Location = new System.Drawing.Point(506, 103);
+            this.btest.Location = new System.Drawing.Point(111, 209);
             this.btest.Name = "btest";
             this.btest.Size = new System.Drawing.Size(261, 163);
             this.btest.TabIndex = 3;

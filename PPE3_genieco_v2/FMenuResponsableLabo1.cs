@@ -16,6 +16,28 @@ namespace PPE3_genieco_v2
         {
             InitializeComponent();
         }
+        public partial class FMenuAdmin : FMenuResponsableLabo1
+        {
+            public FMenuAdmin()
+            {
+                InitializeComponent();
 
+                var item = new System.Windows.Forms.ToolStripMenuItem()
+                {
+                    Name = "Test",
+                    Text = "Test"
+                };
+                this.parametreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            item});
+                item.Click += new System.EventHandler(this.toto);
+
+            }
+            private void toto(object sender, EventArgs e)
+            {
+                MessageBox.Show("ok");
+            }
+
+
+        }
     }
 }

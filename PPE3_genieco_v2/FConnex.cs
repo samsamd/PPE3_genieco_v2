@@ -78,7 +78,7 @@ namespace PPE3_genieco_v2
             }
             else
             {
-                MessageBox.Show("Erreur de mdp ou d'identifiant veuillez reessayer");
+                MessageBox.Show("Erreur de mot de passe ou d'identifiant veuillez reessayer");
             }
         }
     }
