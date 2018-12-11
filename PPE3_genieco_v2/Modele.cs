@@ -99,6 +99,21 @@ namespace PPE3_genieco_v2
             return maConnexion.Visiteur.ToList();
         }
 
+        public static List<MOTIF> ListMotif()
+        {
+            return maConnexion.MOTIF.ToList();
+        }
+        public static List<MEDICAMENT> ListMedicament()
+        {
+            return maConnexion.MEDICAMENT.ToList();
+        }
+        
+
+        public static int secteurVisiteur()
+        {
+            var LQuery= maConnexion.Region.ToList().Where(x => x.idVisiteur == VisiteurConnecte.idVisiteur);
+            return LQuery.ToList()[0].idSecteur;
+        }
         public static object rapportParId(int unIdRapport)
         {
             var LQuery = maConnexion.RAPPORT.ToList()
@@ -106,16 +121,19 @@ namespace PPE3_genieco_v2
             return LQuery.ToList();
 
         }
-
-        public static List<Visiteur> listeLesVisiteurs()
+        
+      public static List<MEDECIN> ListMedecinparRegion()
         {
-            return maConnexion.Visiteur.ToList();
+            var LQuery = maConnexion.MEDECIN.ToList().Where(x => x.departement == secteurVisiteur());
+            return LQuery.ToList();
+
         }
 
         public static List<OFFRIR> medicamentParRapport(int unIdRapport)
         {
             var LQuery = maConnexion.OFFRIR.ToList().Where(x => x.idRapport == unIdRapport);
             return LQuery.ToList();
+          
         }
         private static string GetMd5Hash(string PasswdSaisi)
 
@@ -141,7 +159,7 @@ namespace PPE3_genieco_v2
         public static bool comparerMDP(string id, string mdp)
         {
             bool retour = false;
-            List<Visiteur> LesVisiteurs = Modele.listeLesVisiteurs();
+            List<Visiteur> LesVisiteurs = Modele.ListVisiteur();
             string mdpmd5 = GetMd5Hash(mdp);
             var LQuery = maConnexion.Visiteur.Where(x => x.identifiant == id);
             foreach (Visiteur visiteurconnecte in LesVisiteurs)

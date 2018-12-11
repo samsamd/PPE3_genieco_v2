@@ -111,6 +111,12 @@
     <Compile Include="FRapportVisite.Designer.cs">
       <DependentUpon>FRapportVisite.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRapVisModif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRapVisModif.Designer.cs">
+      <DependentUpon>FRapVisModif.cs</DependentUpon>
+    </Compile>
     <Compile Include="Laboratoire.cs">
       <DependentUpon>bdd_gsb.tt</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRapportVisite.resx">
       <DependentUpon>FRapportVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRapVisModif.resx">
+      <DependentUpon>FRapVisModif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
