@@ -126,8 +126,17 @@ namespace PPE3_genieco_v2
         {
             var LQuery = maConnexion.MEDECIN.ToList().Where(x => x.departement == secteurVisiteur());
             return LQuery.ToList();
-
         }
+
+        public static List<Region> listResponsableRegion()
+        {
+            return maConnexion.Region.ToList();
+        }
+        public static List<Secteur> listResponsableSecteur()
+        {
+            return maConnexion.Secteur.ToList();
+        }
+            
 
         public static List<OFFRIR> medicamentParRapport(int unIdRapport)
         {
