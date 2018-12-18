@@ -12,7 +12,7 @@ namespace PPE3_genieco_v2
 {
     public partial class FRapVisModif : Form
     {
-        public FRapVisModif()
+        public FRapVisModif(int id)
         {
             InitializeComponent();
             bsMedecin.DataSource = Modele.ListMedecinparRegion();

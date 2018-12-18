@@ -45,6 +45,8 @@
             this.dgvMedicament = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.bsMedicament = new System.Windows.Forms.BindingSource(this.components);
+            this.btnModif = new System.Windows.Forms.Button();
+            this.btnAjouter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapport2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicament)).BeginInit();
@@ -165,11 +167,33 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Médicaments offerts";
             // 
+            // btnModif
+            // 
+            this.btnModif.Location = new System.Drawing.Point(466, 415);
+            this.btnModif.Name = "btnModif";
+            this.btnModif.Size = new System.Drawing.Size(75, 23);
+            this.btnModif.TabIndex = 13;
+            this.btnModif.Text = "Modifier";
+            this.btnModif.UseVisualStyleBackColor = true;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(357, 415);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(75, 23);
+            this.btnAjouter.TabIndex = 14;
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
             // FRapportVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAjouter);
+            this.Controls.Add(this.btnModif);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvMedicament);
             this.Controls.Add(this.cboNumRapp);
@@ -212,5 +236,7 @@
         private System.Windows.Forms.DataGridView dgvMedicament;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource bsMedicament;
+        private System.Windows.Forms.Button btnModif;
+        private System.Windows.Forms.Button btnAjouter;
     }
 }

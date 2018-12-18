@@ -57,6 +57,15 @@ namespace PPE3_genieco_v2
 
         }
 
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            FRapVisModif modif = new FRapVisModif(int.Parse(cboNumRapp.SelectedValue.ToString()));
+            modif.Show();
+        }
     }
 }
